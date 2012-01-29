@@ -5,5 +5,7 @@ SocialMentions::Application.routes.draw do
   get "auth/github/callback" => "sessions#create", :success => true
   get "auth/failure" => "sessions#create", :success => false
   
+  resources :users, :only => :show
+  
   root :to => "static#home", :via => :get
 end

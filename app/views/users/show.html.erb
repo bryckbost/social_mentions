@@ -1,0 +1,9 @@
+<h1><%= @user.full_name %></h1>
+
+<h2>Public repositories</h2>
+
+<ul>
+<% @user.github.repositories.each do |repo| %>
+  <li><%= repo.name %></li>
+<% end %>
+</ul>

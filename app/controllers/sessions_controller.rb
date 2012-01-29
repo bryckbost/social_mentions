@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if params[:success]
       user = User.from_omniauth!(request.env["omniauth.auth"])
       cookies.permanent.signed[:token] = user.token
-      redirect_to root_path
+      redirect_to user_path(user)
     else
       flash[:error] = "You could not be logged in!"
       redirect_to root_path
