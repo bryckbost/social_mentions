@@ -31,6 +31,8 @@ GEM
     addressable (2.2.6)
     arel (3.0.0)
     bson (1.5.2)
+    bson_ext (1.5.2)
+      bson (= 1.5.2)
     builder (3.0.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -138,6 +140,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
   coffee-rails (~> 3.2.1)
   jquery-rails
   mongo_mapper

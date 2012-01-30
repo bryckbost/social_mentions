@@ -12,6 +12,8 @@ class User
   key :github_access_token, String
   timestamps!
   
+  before_save :set_token
+  
   def self.from_omniauth!(omniauth)
     info = omniauth["info"]
     extra = omniauth.fetch("extra", {}).fetch("raw_info", {})
@@ -37,6 +39,11 @@ class User
 
   def github
     @github ||= Octokit::Client.new(:oauth_token => github_access_token)
+  end
+  
+private
+  def set_token
+    self[:token] = SecureRandom.hex
   end
 
 end

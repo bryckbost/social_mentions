@@ -11,6 +11,14 @@ class ApplicationController < ActionController::Base
     @current_user = token && User.find_by_token(token)
     cookies.delete(:token) unless @current_user
     @current_user
-  end  
+  end
+
+  def require_authentication
+    unless current_user
+      flash[:warning] = "Log in first!"
+      redirect_to root_path
+    end
+  end
+  
   
 end

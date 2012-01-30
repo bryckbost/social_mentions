@@ -4,6 +4,7 @@ gem 'rails', '3.2.1'
 gem 'omniauth-github'
 gem 'octokit'
 gem 'mongo_mapper'
+gem 'bson_ext'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
