@@ -2,8 +2,13 @@
 
 <h2>Recent Twitter Mentions</h2>
 
-<h2>Recent StackOverflow Mentions</h2>
 
+<% if @questions.present? %>
+<h2>Recent StackOverflow Mentions</h2>
 <ul class="stackoverlow-mentions">
+  <% @questions.each do |question| %>
+    <li><a href="http://stackoverflow.com/questions/<%= question.id %>"><%= question.title %></li>
+  <% end %>
 </ul>
+<% end %>  
 

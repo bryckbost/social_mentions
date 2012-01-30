@@ -3,5 +3,6 @@ class RepositoriesController < ApplicationController
 
   def show
     @repository = current_user.github.repository("#{current_user.name}/#{params[:name]}")
+    @questions = StackExchange.search(params[:name])
   end
 end

@@ -5,6 +5,9 @@ gem 'omniauth-github'
 gem 'octokit'
 gem 'mongo_mapper'
 gem 'bson_ext'
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'pry'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
