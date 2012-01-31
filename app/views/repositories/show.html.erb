@@ -1,6 +1,17 @@
 <h1 data-name="<%= @repository.name %>"><%= @repository.name %></h1>
 
+<% if @mentions.present? %>
 <h2>Recent Twitter Mentions</h2>
+<ul class="stackoverlow-mentions">
+  <% @mentions.each do |mention| %>
+    <li>
+      <%= image_tag mention.profile_image_url %>
+      <%= mention.from_user_name %> <%= time_ago_in_words mention.created_at %><br>
+      <%= mention.text %>
+    </li>
+  <% end %>
+</ul>
+<% end %>
 
 
 <% if @questions.present? %>

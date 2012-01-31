@@ -8,6 +8,7 @@ gem 'bson_ext'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'pry'
+gem 'twitter'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
