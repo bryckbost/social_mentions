@@ -41,6 +41,10 @@ class User
     @github ||= Octokit::Client.new(:oauth_token => github_access_token)
   end
   
+  def personal_repositories
+    @personal_repositories ||= github.repositories(name, :all => true)
+  end
+
 private
   def set_token
     self[:token] = SecureRandom.hex

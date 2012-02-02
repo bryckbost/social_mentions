@@ -3,10 +3,12 @@
 <h2>Public repositories</h2>
 
 <ul>
-<% @user.github.repositories.each do |repo| %>
-  <li><%= link_to repo.name, repository_path(:name => repo.name) %></li>
+<% @user.personal_repositories.each do |repo| %>
+  <li><%= link_to repo.name, repository_path(:user => current_user.name, :name => repo.name) %></li>
 <% end %>
-<% @user.github.organization_repositories.each do |repo| %>
-  <li><%= link_to repo.name, repository_path(:name => repo.name) %></li>
+<% @user.github.organizations.each do |org| %>
+  <% @user.github.organization_repositories(org.login).each do |repo| %>
+    <li><%= link_to repo.name, repository_path(:user => org.login, :name => repo.name) %></li>
+  <% end %>
 <% end %>
 </ul>
