@@ -6,4 +6,7 @@
 <% @user.github.repositories.each do |repo| %>
   <li><%= link_to repo.name, repository_path(:name => repo.name) %></li>
 <% end %>
+<% @user.github.organization_repositories.each do |repo| %>
+  <li><%= link_to repo.name, repository_path(:name => repo.name) %></li>
+<% end %>
 </ul>
