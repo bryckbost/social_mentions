@@ -9,6 +9,7 @@ gem 'faraday'
 gem 'faraday_middleware'
 gem 'pry'
 gem 'twitter'
+gem 'figaro'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
