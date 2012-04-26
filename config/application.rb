@@ -1,5 +1,4 @@
 require File.expand_path('../boot', __FILE__)
-require File.expand_path('../preinitializer', __FILE__)
 
 # Pick the frameworks you want:
 # require "active_record/railtie"
